@@ -4,20 +4,15 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <ul className="nav-list">
-        <li className="nav-item">
-          <Link to="/" className="nav-link">Inicio</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/acerca" className="nav-link">Acerca de</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/contacto" className="nav-link">Contacto</Link>
-        </li>
-      </ul>
-    </nav>
+    <div className="navbar-container">
+      <nav className="navbar">
+        <Link to="/" className="nav-link">Inicio</Link>
+        <Link to="/acerca" className="nav-link">Acerca de</Link>
+        <Link to="/contacto" className="nav-link">Contacto</Link>
+      </nav>
+    </div>
   );
 };
 
-export default Navbar; 
+export default Navbar;
+ 

@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// App.jsx
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Inicio from './Pages/inicio/inicio';
@@ -27,7 +28,7 @@ function App() {
   );
 }
 
-// Componente Footer (puedes moverlo a su propio archivo después)
+// Componente Footer
 const Footer = () => {
   return (
     <footer className="footer">
@@ -39,9 +40,9 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Enlaces Rápidos</h3>
           <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/acerca">Acerca de</a></li>
-            <li><a href="/contacto">Contacto</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/acerca">Acerca de</Link></li>
+            <li><Link to="/contacto">Contacto</Link></li>
           </ul>
         </div>
         <div className="footer-section">
@@ -63,7 +64,7 @@ const NotFound = () => {
     <div className="not-found">
       <h2>404 - Página No Encontrada</h2>
       <p>Lo sentimos, la página que buscas no existe.</p>
-      <a href="/" className="home-link">Volver al Inicio</a>
+      <Link to="/" className="home-link">Volver al Inicio</Link>
     </div>
   );
 };
