@@ -1,0 +1,136 @@
+.acerca-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.acerca-hero {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+.acerca-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.acerca-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.acerca-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.acerca-historia,
+.acerca-valores,
+.acerca-equipo,
+.acerca-logros {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.acerca-content h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.acerca-content p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.valor-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: transform 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-5px);
+}
+
+.valor-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.logros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.logro-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logro-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.logro-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .acerca-container {
+    padding: 1rem;
+  }
+  
+  .acerca-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .acerca-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .valores-grid,
+  .logros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .acerca-content h2 {
+    font-size: 1.5rem;
+  }
+} 
