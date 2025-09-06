@@ -1,10 +1,15 @@
-// App.jsx
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
+import Login from './components/Login/Login';
 import Inicio from './Pages/inicio/inicio';
 import Acerca from './Pages/Acerca/Acerca';
 import Contacto from './Pages/Contacto/Contacto';
+import SaberMas from './Pages/SaberMas/SaberMas';
+import Galeriadeimagenes from './Pages/Galeriadeimagenes/Galeriadeimagenes';
+import Chatbot from './components/Chatbot/Chatbot';
+import Whatsappchat from './components/Whatsappchat/Whatsappchat';
+import SocialFloat from './components/SocialFloat/SocialFloat';
 import './App.css';
 
 function App() {
@@ -13,16 +18,22 @@ function App() {
       <div className="App">
         <Header />
         <Navbar />
+        <SocialFloat />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/acerca" element={<Acerca />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sabermas" element={<SaberMas />} />
+            <Route path="/galeria" element={<Galeriadeimagenes />} />
             {/* Ruta para páginas no encontradas */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
+        <Chatbot />
+        <Whatsappchat />
       </div>
     </Router>
   );
@@ -41,18 +52,22 @@ const Footer = () => {
           <h3>Enlaces Rápidos</h3>
           <ul>
             <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/galeria">Galería</Link></li>
+            <li><Link to="/sabermas">Saber Más</Link></li>
             <li><Link to="/acerca">Acerca de</Link></li>
             <li><Link to="/contacto">Contacto</Link></li>
+            <li><Link to="/login">Login</Link></li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Contacto</h3>
           <p>📧 info@empresa.com</p>
           <p>📞 +1 (555) 123-4567</p>
+          <p>💬 +1 (555) 123-WAPP</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

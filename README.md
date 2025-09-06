@@ -1,15 +1,134 @@
-# React + Vite
+🌌 Sitio Web con Diseño Espacial
+https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react
+https://img.shields.io/badge/React_Router-6.8.0-CA4245?style=for-the-badge&logo=react-router
+https://img.shields.io/badge/CSS3-Animation-1572B6?style=for-the-badge&logo=css3
+https://img.shields.io/badge/Design-Responsive-FF6B6B?style=for-the-badge
+https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un sitio web moderno con temática espacial que incluye efectos cósmicos, componentes flotantes y animaciones avanzadas. Diseñado para una experiencia de usuario inmersiva.
 
-Currently, two official plugins are available:
+✨ Características Destacadas
+🚀 Diseño Espacial
+🌌 Fondo cósmico animado con estrellas parpadeantes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🪐 Planetas flotantes (Tierra, Marte, Júpiter, Saturno)
 
-## Expanding the ESLint configuration
+☄️ Cometas con estelas luminosas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌫️ Nebulosas pulsantes con efectos de gas cósmico
 
-<img width="2511" height="1144" alt="image" src="https://github.com/user-attachments/assets/2aa33f66-6926-46f6-9b17-ed291e00ad7d" />
+👨‍🚀 Astronauta y OVNI animados
 
+📱 Componentes Flotantes
+🤖 Chatbot inteligente con respuestas automáticas
+
+💬 WhatsApp Chat integrado directamente
+
+📱 Social Float - redes sociales flotantes
+
+🎨 Interfaz moderna con glassmorphism
+
+🖼️ Galería de Imágenes
+🪟 Modal interactivo para visualización de imágenes
+
+📊 Diseño grid responsive
+
+✨ Efectos hover y transiciones suaves
+
+📱 Optimizada para móviles y desktop
+
+🎯 Funcionalidades
+🧭 Navegación responsive con React Router
+
+📝 Formulario de contacto con validación
+
+📱 Diseño adaptable a todos los dispositivos
+
+🎬 Animaciones CSS avanzadas
+
+🌙 Modo oscuro automático
+
+🛠️ Tecnologías Utilizadas
+Tecnología	Función	Versión
+https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white	Framework principal	18.2.0
+https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white	Navegación	6.8.0
+https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white	Animaciones y diseño	3
+https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black	Funcionalidad	ES6+
+https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white	Estructura semántica	5
+
+
+src/
+├── 📂 components/
+│   ├── 📂 Chatbot/           # 🤖 Chatbot inteligente
+│   ├── 📂 Whatsappchat/      # 💬 Integración WhatsApp
+│   ├── 📂 SocialFloat/       # 📱 Redes sociales flotantes
+│   ├── 📂 SpaceBackground/   # 🌌 Fondos espaciales
+│   ├── 📂 Header/            # 🏗️ Encabezado
+│   └── 📂 Navbar/            # 🧭 Navegación
+├── 📂 Pages/
+│   ├── 📂 inicio/            # 🏠 Página principal
+│   ├── 📂 Acerca/            # ℹ️ Acerca de
+│   ├── 📂 Contacto/          # 📞 Formulario contacto
+│   ├── 📂 Galeriadeimagenes/ # 🖼️ Galería con modal
+│   └── 📂 SaberMas/          # 📚 Información adicional
+├── ⚛️ App.jsx                # Componente principal
+├── 🎨 App.css               # Estilos globales
+└── 📄 index.js              # Punto de entrada    
+
+
+🚀 Instalación y Uso
+Prerrequisitos
+Node.js 16+
+
+npm o yarn
+
+Git
+
+📦 Instalación 
+
+
+Clona el repositorio: 
+
+git clone https://github.com/Estheban18/proyect-.git
+cd proyect- 
+
+
+Instala las dependencias: 
+npm install
+# o
+yarn install  
+
+
+
+Inicia el servidor de desarrollo: 
+npm start
+# o
+yarn start 
+
+
+Abre tu navegador en: 
+http://localhost:3000 
+
+
+🏗️ Build para Producción 
+npm run build
+# o
+yarn build 
+
+
+🎮 Cómo Usar
+🌌 Experiencia Espacial
+Observa las estrellas parpadear en el fondo
+
+Mira los planetas flotar suavemente
+
+Sigue los cometas con sus estelas luminosas
+
+💬 Componentes Interactivos
+Chatbot: Click en el ícono de chat inferior izquierdo
+
+WhatsApp: Ícono flotante inferior derecho para chat directo
+
+Redes Sociales: Barra lateral izquierda con animaciones
+
+Galería: Click en cualquier imagen para modal 
