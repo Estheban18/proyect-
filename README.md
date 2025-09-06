@@ -57,6 +57,8 @@ https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript
 https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white	Estructura semántica	5
 
 
+```
+📁 Estructura del Proyecto 
 src/
 ├── 📂 components/
 │   ├── 📂 Chatbot/           # 🤖 Chatbot inteligente
@@ -73,62 +75,13 @@ src/
 │   └── 📂 SaberMas/          # 📚 Información adicional
 ├── ⚛️ App.jsx                # Componente principal
 ├── 🎨 App.css               # Estilos globales
-└── 📄 index.js              # Punto de entrada    
+└── 📄 index.js              # Punto de entrada  
+``` 
 
-
-🚀 Instalación y Uso
+🚀 Instalación y Uso  
 Prerrequisitos
 Node.js 16+
 
 npm o yarn
 
 Git
-
-📦 Instalación 
-
-
-Clona el repositorio: 
-
-git clone https://github.com/Estheban18/proyect-.git
-cd proyect- 
-
-
-Instala las dependencias: 
-npm install
-# o
-yarn install  
-
-
-
-Inicia el servidor de desarrollo: 
-npm start
-# o
-yarn start 
-
-
-Abre tu navegador en: 
-http://localhost:3000 
-
-
-🏗️ Build para Producción 
-npm run build
-# o
-yarn build 
-
-
-🎮 Cómo Usar
-🌌 Experiencia Espacial
-Observa las estrellas parpadear en el fondo
-
-Mira los planetas flotar suavemente
-
-Sigue los cometas con sus estelas luminosas
-
-💬 Componentes Interactivos
-Chatbot: Click en el ícono de chat inferior izquierdo
-
-WhatsApp: Ícono flotante inferior derecho para chat directo
-
-Redes Sociales: Barra lateral izquierda con animaciones
-
-Galería: Click en cualquier imagen para modal 
