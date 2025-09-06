@@ -1,4 +1,10 @@
 🌌 Sitio Web con Diseño Espacial
+<img width="2487" height="1266" alt="image" src="https://github.com/user-attachments/assets/9d6da580-6d6a-4184-b673-91d76fe89ecf" /> 
+
+
+
+
+
 https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react
 https://img.shields.io/badge/React_Router-6.8.0-CA4245?style=for-the-badge&logo=react-router
 https://img.shields.io/badge/CSS3-Animation-1572B6?style=for-the-badge&logo=css3
