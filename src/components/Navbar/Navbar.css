@@ -1,4 +1,4 @@
-/* Navbar.css - Versión Mejorada con Glassmorphism */
+/* Navbar.css - Versión Mejorada con Glassmorphism Transparente */
 :root {
   --primary: #3b82f6;
   --primary-dark: #2563eb;
@@ -6,9 +6,9 @@
   --accent: #8b5cf6;
   --text: #1f2937;
   --text-light: #f8fafc;
-  --bg-glass: rgba(255, 255, 255, 0.15);
-  --bg-glass-dark: rgba(31, 41, 55, 0.85);
-  --border-glass: rgba(255, 255, 255, 0.2);
+  --bg-glass: rgba(255, 255, 255, 0.1);
+  --bg-glass-dark: rgba(15, 23, 42, 0.95);
+  --border-glass: rgba(255, 255, 255, 0.15);
   --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
@@ -20,49 +20,72 @@
   padding: 1rem 2rem;
 }
 
-/* Botón Hamburguesa con efecto glass */
+/* Botón Hamburguesa Ultra Transparente */
 .hamburger-btn {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: var(--bg-glass);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
-  border-radius: 12px;
+  border-radius: 50%;
   cursor: pointer;
   padding: 0;
   z-index: 1000;
-  position: relative;
-  transition: all 0.4s ease;
-  box-shadow: var(--shadow-glass);
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    var(--shadow-glass),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .hamburger-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 12px 40px rgba(31, 38, 135, 0.2),
+    inset 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
 .hamburger-line {
-  width: 25px;
+  width: 30px;
   height: 2px;
   background: var(--primary);
   border-radius: 3px;
   margin: 3px 0;
   transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   transform-origin: center;
+  position: relative;
+}
+
+.hamburger-line::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(3px);
+  opacity: 0.5;
 }
 
 .hamburger-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: rotate(180deg);
+}
+
+.hamburger-btn.active .hamburger-line {
+  background: white;
 }
 
 .hamburger-btn.active .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-  background: white;
+  transform: rotate(45deg) translate(7px, 7px);
 }
 
 .hamburger-btn.active .hamburger-line:nth-child(2) {
@@ -71,18 +94,40 @@
 }
 
 .hamburger-btn.active .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-  background: white;
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Navegación con efecto glassmorphism mejorado */
+/* Efecto de pulso al activar */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 
+      0 0 0 rgba(59, 130, 246, 0.4),
+      inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.6),
+      inset 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 0 0 rgba(59, 130, 246, 0.4),
+      inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.hamburger-btn.active {
+  animation: pulseGlow 2s ease-in-out;
+}
+
+/* Navegación con efecto glassmorphism ultra transparente */
 .navbar {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
   background: var(--bg-glass);
-  backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   padding: 0.8rem 1.5rem;
   border-radius: 20px;
   border: 1px solid var(--border-glass);
@@ -124,7 +169,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   transition: width 0.3s ease;
   border-radius: 2px;
@@ -153,8 +198,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
   z-index: 99;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -164,19 +209,7 @@
   opacity: 1;
 }
 
-/* Responsive Design Mejorado */
-@media (max-width: 968px) {
-  .navbar {
-    gap: 0.3rem;
-    padding: 0.7rem 1rem;
-  }
-  
-  .nav-link {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-  }
-}
-
+/* Menú móvil ultra transparente */
 @media (max-width: 768px) {
   .navbar-container {
     padding: 1rem;
@@ -184,29 +217,26 @@
   
   .hamburger-btn {
     display: flex;
-    position: fixed;
-    top: 25px;
-    right: 25px;
   }
   
   .navbar {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 75%;
-    max-width: 320px;
+    width: 85%;
+    max-width: 350px;
     height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 100px;
+    padding-top: 120px;
     background: var(--bg-glass-dark);
-    backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(25px) saturate(180%);
     border-radius: 0;
     border: none;
     border-left: 1px solid var(--border-glass);
     z-index: 100;
     transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: -5px 0 40px rgba(0, 0, 0, 0.4);
     gap: 0;
   }
   
@@ -216,32 +246,42 @@
   
   .nav-link {
     color: var(--text-light);
-    padding: 1.2rem 2rem;
-    margin: 0.5rem 1.5rem;
-    border-radius: 10px;
+    padding: 1.5rem 2.5rem;
+    margin: 0.8rem 2rem;
+    border-radius: 15px;
     text-align: left;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     animation: slideIn 0.4s ease forwards;
     opacity: 0;
     transform: translateX(50px);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
   
-  .nav-link:nth-child(1) { animation-delay: 0.1s; }
-  .nav-link:nth-child(2) { animation-delay: 0.2s; }
-  .nav-link:nth-child(3) { animation-delay: 0.3s; }
-  .nav-link:nth-child(4) { animation-delay: 0.4s; }
+  .nav-link::before {
+    background: linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.3), 
+      rgba(139, 92, 246, 0.3));
+  }
   
   .nav-link:hover {
-    color: white;
-    background: rgba(59, 130, 246, 0.3);
-    border-color: rgba(59, 130, 246, 0.5);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
   }
   
   .nav-link::after {
     display: none;
   }
+  
+  .nav-link:nth-child(1) { animation-delay: 0.1s; }
+  .nav-link:nth-child(2) { animation-delay: 0.15s; }
+  .nav-link:nth-child(3) { animation-delay: 0.2s; }
+  .nav-link:nth-child(4) { animation-delay: 0.25s; }
+  .nav-link:nth-child(5) { animation-delay: 0.3s; }
   
   .overlay {
     display: block;
@@ -252,30 +292,29 @@
   }
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    width: 85%;
-    max-width: none;
-  }
-  
-  .hamburger-btn {
-    top: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-  }
-  
-  .nav-link {
-    padding: 1.1rem 1.8rem;
-    margin: 0.4rem 1rem;
-  }
+/* Efectos de partículas en el menú móvil */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 /* Animaciones mejoradas */
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(60px);
   }
   to {
     opacity: 1;
@@ -292,31 +331,36 @@
   }
 }
 
-/* Efecto de partículas de fondo opcional para el navbar */
-.navbar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: -1;
+/* Efecto de brillo sutil en los enlaces */
+.nav-link:hover {
+  filter: brightness(1.2);
 }
 
-/* Efecto de brillo al hover */
-.nav-link:hover::before {
-  filter: brightness(1.2);
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .navbar {
+    width: 90%;
+    max-width: none;
+  }
+  
+  .hamburger-btn {
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+  
+  .nav-link {
+    padding: 1.3rem 2rem;
+    margin: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 /* Modo claro/oscuro automático */
 @media (prefers-color-scheme: dark) {
   .navbar {
-    background: rgba(31, 41, 55, 0.8);
+    background: rgba(15, 23, 42, 0.8);
     border-color: rgba(255, 255, 255, 0.1);
   }
   
@@ -333,7 +377,8 @@
 .hamburger-btn:focus-visible,
 .nav-link:focus-visible {
   outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 /* Reduce motion para usuarios que lo prefieran */
@@ -347,5 +392,33 @@
   
   .nav-link {
     animation: none;
+    opacity: 1;
+    transform: none;
   }
+  
+  .hamburger-btn.active {
+    animation: none;
+    transform: none;
+  }
+  
+  .hamburger-btn.active .hamburger-line {
+    transition: none;
+  }
+}
+
+/* Efecto de vidrio esmerilado adicional */
+.navbar {
+  background-image: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      transparent 25%,
+      transparent 75%, 
+      rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* Borde luminoso sutil */
+.navbar {
+  box-shadow: 
+    var(--shadow-glass),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
 } 

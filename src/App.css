@@ -81,6 +81,149 @@ body::before {
 }
 
 /* =============================
+   Z-INDEX PARA PARTÍCULAS
+============================= */
+.main-content {
+  position: relative;
+  z-index: 1; /* Z-index normal para contenido */
+}
+
+.App {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================
+   BOTÓN HAMBURGUESA - PRIORIDAD MÁXIMA
+============================= */
+.hamburger-container {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 10000; /* Valor muy alto */
+  width: auto;
+  height: auto;
+}
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10001; /* Más alto que todo */
+  transition: var(--transition);
+  box-shadow: 
+    0 10px 35px rgba(31, 38, 135, 0.4),
+    inset 0 0 25px rgba(255, 255, 255, 0.3),
+    0 0 0 3px rgba(59, 130, 246, 0.7);
+}
+
+.hamburger-btn:hover {
+  background: rgba(59, 130, 246, 0.95);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 
+    0 15px 45px rgba(31, 38, 135, 0.5),
+    inset 0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 3px;
+  margin: 3.5px 0;
+  transition: var(--transition);
+  transform-origin: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger-btn.active {
+  background: rgba(59, 130, 246, 0.98);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: rotate(180deg);
+}
+
+.hamburger-btn.active .hamburger-line {
+  background: white;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-25px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* =============================
+   LOADING SCREEN
+============================= */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--surface);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--primary-ultralight);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.spinner::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--accent);
+  border-radius: 50%;
+  animation: spinReverse 1.5s linear infinite;
+}
+
+.loading-screen p {
+  font-size: 1.3rem;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: pulse 2s ease-in-out infinite;
+  text-align: center;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/* =============================
    LAYOUT PRINCIPAL MEJORADO
 ============================= */
 .app-container {
@@ -91,7 +234,7 @@ body::before {
 }
 
 /* =============================
-   HEADER MEJORADO
+   HEADER MEJORADO (Z-INDEX REDUCIDO)
 ============================= */
 .app-header {
   background: rgba(255, 255, 255, 0.97);
@@ -100,7 +243,7 @@ body::before {
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1000; /* Reducido para que no tape el botón hamburguesa */
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
@@ -143,6 +286,7 @@ body::before {
   max-width: 850px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: var(--shadow-sm);
+  z-index: 100;
 }
 
 .navbar {
@@ -217,6 +361,7 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .contact-section::before {
@@ -417,7 +562,7 @@ body::before {
   border-radius: var(--radius-md);
   font-size: 1.05rem;
   color: var(--text);
-  background-color: var(--background);
+  background: var(--background);
   transition: var(--transition);
   font-family: inherit;
 }
@@ -610,6 +755,7 @@ body::before {
   padding: 4rem 0 1.5rem;
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 1;
 }
 
 .footer-content {
@@ -768,6 +914,11 @@ body::before {
   100% { transform: rotate(360deg); }
 }
 
+@keyframes spinReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -783,6 +934,95 @@ body::before {
 
 .contact-form {
   animation: slideInRight 0.8s ease;
+}
+
+/* =============================
+   MENÚ MÓVIL - SE SUPERPONE
+============================= */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 350px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 120px;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(25px) saturate(180%);
+    border-radius: 0;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 9999;
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 40px rgba(0, 0, 0, 0.4);
+    gap: 0;
+  }
+  
+  .navbar.active {
+    right: 0;
+  }
+  
+  /* Overlay de fondo para cuando el menú está abierto */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .overlay.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .nav-link {
+    color: #f8fafc;
+    padding: 1.5rem 2.5rem;
+    margin: 0.8rem 2rem;
+    border-radius: 15px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: slideIn 0.4s ease forwards;
+    opacity: 0;
+    transform: translateX(50px);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+  }
+
+  .nav-link:nth-child(1) { animation-delay: 0.1s; }
+  .nav-link:nth-child(2) { animation-delay: 0.15s; }
+  .nav-link:nth-child(3) { animation-delay: 0.2s; }
+  .nav-link:nth-child(4) { animation-delay: 0.25s; }
+  .nav-link:nth-child(5) { animation-delay: 0.3s; }
+}
+
+/* Animación para los elementos del menú */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* =============================
@@ -834,6 +1074,14 @@ body::before {
   
   .contact-info {
     background: var(--gradient-primary);
+  }
+  
+  .loading-screen {
+    background-color: var(--surface);
+  }
+  
+  .loading-screen p {
+    color: var(--text);
   }
 }
 
@@ -923,6 +1171,11 @@ body::before {
   .footer-social {
     justify-content: center;
   }
+  
+  .loading-screen p {
+    font-size: 1.1rem;
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -960,6 +1213,16 @@ body::before {
     width: 40px;
     height: 40px;
   }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .loading-screen p {
+    font-size: 1rem;
+    max-width: 200px;
+  }
 }
 
 /* High contrast mode support */
@@ -984,6 +1247,11 @@ body::before {
   .contact-info {
     border: 2px solid var(--primary);
   }
+  
+  .loading-screen {
+    background-color: white;
+    border: 2px solid var(--border);
+  }
 }
 
 /* Reduced motion support */
@@ -1000,4 +1268,18 @@ body::before {
   html {
     scroll-behavior: auto;
   }
-}
+  
+  .spinner {
+    animation: none;
+    border-top-color: var(--primary);
+  }
+  
+  .spinner::after {
+    animation: none;
+    display: none;
+  }
+  
+  .loading-screen p {
+    animation: none;
+  }
+} 

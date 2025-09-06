@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
@@ -10,12 +11,31 @@ import Galeriadeimagenes from './Pages/Galeriadeimagenes/Galeriadeimagenes';
 import Chatbot from './components/Chatbot/Chatbot';
 import Whatsappchat from './components/Whatsappchat/Whatsappchat';
 import SocialFloat from './components/SocialFloat/SocialFloat';
+import Loading from './components/Loading/Loading';
+import FloatingParticles from './components/FloatingParticles/FloatingParticles'; // Importar partículas
 import './App.css';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simula el tiempo de carga de la aplicación
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // 2.5 segundos
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Mostrar pantalla de carga mientras isLoading sea true
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <Router>
       <div className="App">
+        <FloatingParticles /> {/* Partículas flotantes en toda la app */}
         <Header />
         <Navbar />
         <SocialFloat />
